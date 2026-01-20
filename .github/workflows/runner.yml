@@ -1,0 +1,12 @@
+name: kustomize_runner
+on: push
+
+jobs:
+  apply_kustomize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: testing actions
+        run: ls -ltra
