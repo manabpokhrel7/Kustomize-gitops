@@ -1,0 +1,21 @@
+name: python-deployment
+
+labels:
+  app: python
+
+replicaCount: 3
+
+image:
+  repository: manabpokhrel7/python-kustomize
+  tag: v2
+  pullPolicy: IfNotPresent
+
+container:
+  name: python
+  port: 9000
+
+service:
+  name: python-service
+  type: LoadBalancer
+  port: 80
+  portName: pythonport
