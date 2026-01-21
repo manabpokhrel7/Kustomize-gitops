@@ -24,9 +24,11 @@ jobs:
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
 
+      - name: Installing GKE Auth plugin
+        uses: simenandre/setup-gke-gcloud-auth-plugin@v1
+
       - name: Get GKE credentials
         run: |
-          gcloud components install gke-gcloud-auth-plugin
           gcloud container clusters get-credentials my-gke-cluster-1 --region us-central1 --project sonic-mile-478116-u9
           
 
