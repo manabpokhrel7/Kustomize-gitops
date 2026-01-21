@@ -25,9 +25,9 @@ jobs:
         uses: azure/setup-kubectl@v4
 
       - name: Get GKE credentials
-        run:
-          - gcloud container clusters get-credentials my-gke-cluster-1 --region us-central1 --project sonic-mile-478116-u9
-          - gcloud components install gke-gcloud-auth-plugin
+        run: |
+          gcloud container clusters get-credentials my-gke-cluster-1 --region us-central1 --project sonic-mile-478116-u9
+          gcloud components install gke-gcloud-auth-plugin
 
       # The KUBECONFIG env var is automatically exported and picked up by kubectl.
       - id: 'get-pods'
