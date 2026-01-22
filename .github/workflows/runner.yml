@@ -38,6 +38,7 @@ jobs:
           kubectl apply -f manifest/namespace.yaml
           kubectl get namespace
           kubectl kustomize argocd/overlays/dev/kustomization.yaml
+          kubectl get pods -n argocd
         
 
 #      - name: deploy to cluster
