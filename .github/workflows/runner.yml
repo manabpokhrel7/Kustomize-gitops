@@ -37,7 +37,7 @@ jobs:
         run: |
           kubectl apply -f manifest/namespace.yaml
           kubectl get namespace
-          kubectl kustomize argocd/overlays/dev
+          kubectl kustomize argocd/base
           kubectl get pods -n argocd
         
 
