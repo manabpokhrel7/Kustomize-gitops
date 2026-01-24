@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Kustomize_argocd
+  name: Kustomize-argocd
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
