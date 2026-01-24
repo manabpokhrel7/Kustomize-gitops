@@ -17,4 +17,4 @@ spec:
         - env/dev/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: react
+    namespace: kustomize
