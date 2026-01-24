@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Kustomize_argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/manabpokhrel7/Kustomize-gitops.git
+    targetRevision: main
+    path: manifest/helm-kustomize
+    helm:
+      valueFiles:
+        - values.yaml
+        - env/dev/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: react
+  metadata:
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
