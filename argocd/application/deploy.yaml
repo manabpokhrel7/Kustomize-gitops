@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: Kustomize_argocd
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
@@ -16,6 +18,3 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: react
-  metadata:
-    finalizers:
-      - resources-finalizer.argocd.argoproj.io
