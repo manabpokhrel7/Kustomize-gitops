@@ -18,7 +18,7 @@ jobs:
         uses: 'google-github-actions/auth@v3'
         with:
           project_id: sonic-mile-478116-u9
-          workload_identity_provider: 'projects/963594193612/locations/global/workloadIdentityPools/github-actions/providers/my-repo'
+          workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_FEDERATION }}'
           service_account: terraform-sa@sonic-mile-478116-u9.iam.gserviceaccount.com
 
       - name: Install kubectl
@@ -29,7 +29,7 @@ jobs:
 
       - name: Get GKE credentials
         run: |
-          gcloud container clusters get-credentials my-gke-cluster-1 --region us-central1 --project sonic-mile-478116-u9
+          gcloud container clusters get-credentials ${{ vars.CLUSTER_NAME }} --region us-central1 --project sonic-mile-478116-u9
           
 
       # The KUBECONFIG env var is automatically exported and picked up by kubectl.
