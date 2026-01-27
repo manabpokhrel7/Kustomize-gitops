@@ -9,3 +9,5 @@ metadata:
 data:
   # Both flags must be in one string on a single line
   kustomize.buildOptions: "--enable-helm --load-restrictor LoadRestrictionsNone"
+  # --load-restrictor LoadRestrictionsNone: Allows reaching ../../../helm-kustomize
+  # --enable-helm: Processes the helmCharts block

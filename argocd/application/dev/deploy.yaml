@@ -5,10 +5,6 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-data:
-  # --enable-helm: Processes the helmCharts block
-  # --load-restrictor LoadRestrictionsNone: Allows reaching ../../../helm-kustomize
-  kustomize.buildOptions: "--enable-helm --load-restrictor LoadRestrictionsNone"
 spec:
   project: default
   source:
