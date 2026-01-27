@@ -15,9 +15,9 @@ spec:
       valueFiles:
         - values.yaml
         - env/dev/values.yaml
-      kustomize:
-        overlays:
-          - ../kustomize/overlays/dev
+    kustomize:
+      overlays:
+        - ../kustomize/overlays/dev
   destination:
     server: https://kubernetes.default.svc
 #    namespace: kustomize # I labelled this in kustomize/base
