@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/manabpokhrel7/Kustomize-gitops.git
     targetRevision: main
-    path: manifest/helm-kustomize/overlays/dev
+    path: manifest/kustomize/overlays/dev
   destination:
     server: https://kubernetes.default.svc
 #    namespace: kustomize # I labelled this in kustomize/base
