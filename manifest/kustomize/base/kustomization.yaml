@@ -3,6 +3,4 @@ kind: Kustomization
 
 namespace: kustomize
 
-helmGlobals:
-  chartHome: ../.. # Path from base to manifest folder which is helm-kustomize folder which contains your helm charts
 

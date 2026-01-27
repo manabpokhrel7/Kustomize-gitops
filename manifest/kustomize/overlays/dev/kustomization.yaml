@@ -11,6 +11,9 @@ labels:
     includeSelectors: true
     includeTemplates: true # Ensures Pods also get these labels
 
+helmGlobals:
+  chartHome: ../../.. # Path from base to manifest folder which is helm-kustomize folder which contains your helm charts
+
 helmCharts:
 - name: helm-kustomize
   releaseName: v1
