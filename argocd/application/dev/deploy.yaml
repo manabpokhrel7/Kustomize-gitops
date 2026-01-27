@@ -5,19 +5,16 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+data:
+  # --enable-helm: Processes the helmCharts block
+  # --load-restrictor LoadRestrictionsNone: Allows reaching ../../../helm-kustomize
+  kustomize.buildOptions: "--enable-helm --load-restrictor LoadRestrictionsNone"
 spec:
   project: default
   source:
     repoURL: https://github.com/manabpokhrel7/Kustomize-gitops.git
     targetRevision: main
-    path: manifest/helm-kustomize
-    helm:
-      valueFiles:
-        - values.yaml
-        - env/dev/values.yaml
-    kustomize:
-      overlays:
-        - ../kustomize/overlays/dev
+    path: manifest/helm-kustomize/overlays/dev
   destination:
     server: https://kubernetes.default.svc
 #    namespace: kustomize # I labelled this in kustomize/base

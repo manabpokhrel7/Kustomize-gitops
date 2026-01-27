@@ -39,7 +39,7 @@ jobs:
           kubectl get namespace
           kubectl apply -k argocd/install
           kubectl wait --for=condition=Ready pods -n argocd --all --timeout=120s
-          kubectl apply -f argocd/application/deploy.yaml
+          kubectl apply -f argocd/application/dev/deploy.yaml
           kubectl get pods -n argocd
         
 

@@ -9,3 +9,11 @@ labels:
       manab: pokhrel
       kishna: khadayat
     includeSelectors: true
+    includeTemplates: true # Ensures Pods also get these labels
+
+helmCharts:
+- name: helm-kustomize
+  releaseName: v1
+  valuesFile: ../../../helm-kustomize/values.yaml
+  additionalValuesFiles:
+    - ../../../helm-kustomize/env/dev/values.yaml
